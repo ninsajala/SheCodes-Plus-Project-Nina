@@ -1,4 +1,10 @@
+ul {
+    list-style-type: none;
+}
 .container {
     margin: 0 auto;
     text-align: center;
+}
+.conditions {
+    text-align: left;
 }
