@@ -1,40 +1,58 @@
-ul {
-    list-style-type: none;
+h1 {
+    font-size: larger;
 }
 h2 {
     position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-h3 {
-    position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 form {
     text-align: left;
+    margin: 5% 20%;
+}
+ul {
+    list-style-type: none;
 }
 .container {
+    font-family: 'Montserrat Alternates', sans-serif;
     margin: 0 auto;
     text-align: center;
-    width: 90%;
-}
-.leftColumn {
+    border: 0.5px solid black;
+    box-shadow: 2px 3px 3px grey;
+    width: 80%;
     height 100%;
+    border-radius: 5%;
+}
+.locationLink {
+    margin: 4%;
+}
+.fa-map-marker-alt {
+    color: black;
+    font-size: x-large;
+}
+.fa-map-marker-alt:hover {
+    color: red;
+    font-size: xx-large;
+
 }
 .currentCondition {
-background: radial-gradient(circle, rgb(188, 209, 216) 0%, rgba(255,124,0,1) 100%);
+ border-radius: 40%;
 }
 .currentIcon {
-    width: 80%;
+    width: 60%;
+}
+.comingHour {
+    margin: 10% 0;
 }
 .comHourIcon {
     width: 60%;
 }
 .conditions {
     text-align: left;
+}
+.condition {
+    margin: 3% 0 3% 5%;
 }
 .conditionIcon {
     width: 15%;
@@ -47,6 +65,10 @@ background: radial-gradient(circle, rgb(188, 209, 216) 0%, rgba(255,124,0,1) 100
 }
 .comingDays {
     height: 100%;
+    margin: 10% 5% 10% 5%;
+}
+.comingDay {
+    margin: 8% 5%;
 }
 .comDayIcon {
     width: 50%;

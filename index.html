@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="src/styles.css">
     <link rel='icon' href='https://icons-for-free.com/iconfiles/png/512/forecast+partly+cloudy+weather+icon-1320196484400215944.png' type='image/x-icon' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/59836ea697.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -14,8 +16,9 @@
 <div class="col-7 leftColumn">
    <form id="search-location">
         <input type="text" placeholder="Search location">
-        <input type="submit" value="submit"> 
-        <a href="#">Current Location</a>
+        <button type="submit" value="Search"><i class="fas fa-search"></i></button>
+        <a class="locationLink" href="#" title="Go to current location">  
+            <i class="fas fa-map-marker-alt fa-lg"></i></a>
     </form>
     
     <div class="currentCondition">
@@ -23,36 +26,38 @@
     <p>Monday <br> 
        August 10, 2020<br>
        11:46</p>
-    <h2>28°C|°F</h2>
+    <h2>28°C |°F <br>
+        Clear Sky <br>
+    </h2>
     <img class="currentIcon" src="images/sunny.png" alt="Clear Sky Icon">
-    <h3>Clear Sky</h3>
-    <h4>18°C/<strong>33°C</strong></h4>
+    <h3>18°C | <strong>33°C</strong></h3>
+
 </div>
     <div class="row">
-        <div class="col-3">13h<br>
+        <div class="col-3 comingHour">13h<br>
             <img src="images/cloudy-sunny.png" alt="Some Clouds" class="comHourIcon"><br>
             28°C
         </div>
-        <div class="col-3">15h <br>
+        <div class="col-3 comingHour">15h <br>
             <img src="images/cloudy-sunny.png" alt="Some Clouds" class="comHourIcon"><br>
             31°C
         </div>
-        <div class="col-3">17h <br>
+        <div class="col-3 comingHour">17h <br>
             <img src="images/sunny.png" alt="Clear Sky" class="comHourIcon"><br>
             30°C
         </div>
-        <div class="col-3">19h <br>
+        <div class="col-3 comingHour">19h <br>
             <img src="images/sunny.png" alt="Clear Sky" class="comHourIcon"><br>
             28°C
         </div>
     </div>
     <ul class="conditions">
-        <li><img src="images/wind.png" alt="Wind" class="conditionIcon">
-            <strong>Wind:</strong> 15km/h</li>
-        <li><img src="images/humidity.png" alt="Humidity" class="conditionIcon">
+        <li class="condition"><img src="images/humidity.png" alt="Humidity" class="conditionIcon">
         <strong>Humidity:</strong> 65%</li>
-        <li><img src="images/drip.png" alt="Precipitation" class="conditionIcon">
-            <strong>Precipitation:</strong>0 MM</li>
+        <li class="condition"><img src="images/wind.png" alt="Wind" class="conditionIcon">
+            <strong>Wind:</strong> 15km/h</li>
+        <li class="condition"><img src="images/drip.png" alt="Precipitation" class="conditionIcon">
+            <strong>Precipitation:</strong> 0 MM</li>
     </ul>
     <div class="row">
         <div class="col-1"></div>
@@ -70,31 +75,31 @@
 
 </div>
 <div class="col-5">
-    <ul class="comingDays">Coming days
-    <li>Tuesday<br>
-        August 11 <br>
+    <ul class="comingDays"><strong>Coming days</strong>
+    <li class="comingDay">Tuesday<br>
+        Aug 11 <br>
     <img src="images/sunny.png" alt="Clear Sky" class="comDayIcon"><br>
-    17°C/<strong>30°C</strong>
+    17°C | <strong>30°C</strong>
     </li>
-    <li>Wednesday<br>
-        August 12 <br>
+    <li class="comingDay">Wednesday<br>
+        Aug 12 <br>
     <img src="images/sunny.png" alt="Clear Sky" class="comDayIcon"><br>
-    17°C/<strong>30°C</strong>
+    17°C | <strong>30°C</strong>
     </li>
-    <li>Thursday<br>
-        August 13 <br>
+    <li class="comingDay">Thursday<br>
+        Aug 13 <br>
     <img src="images/sunny.png" alt="Clear Sky" class="comDayIcon"><br>
-    17°C/<strong>30°C</strong>
+    17°C | <strong>30°C</strong>
     </li>
-    <li>Friday<br>
-        August 14 <br>
+    <li class="comingDay">Friday<br>
+        Aug 14 <br>
     <img src="images/sunny.png" alt="Clear Sky" class="comDayIcon"><br>
-    17°C/<strong>30°C</strong>
+    17°C | <strong>30°C</strong>
     </li>
-    <li>Saturday<br>
-        August 15 <br>
+    <li class="comingDay">Saturday<br>
+        Aug 15 <br>
     <img src="images/sunny.png" alt="Clear Sky" class="comDayIcon"><br>
-    17°C/<strong>30°C</strong>
+    17°C | <strong>30°C</strong>
     </li></ul>
 </div>
 </div>
