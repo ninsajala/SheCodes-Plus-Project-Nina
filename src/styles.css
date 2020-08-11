@@ -1,10 +1,53 @@
 ul {
     list-style-type: none;
 }
+h2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+form {
+    text-align: left;
+}
 .container {
     margin: 0 auto;
     text-align: center;
+    width: 90%;
+}
+.leftColumn {
+    height 100%;
+}
+.currentCondition {
+background: radial-gradient(circle, rgb(188, 209, 216) 0%, rgba(255,124,0,1) 100%);
+}
+.currentIcon {
+    width: 80%;
+}
+.comHourIcon {
+    width: 60%;
 }
 .conditions {
     text-align: left;
+}
+.conditionIcon {
+    width: 15%;
+}
+.Sunrise {
+    width: 50%;
+}
+.Sunset {
+    width: 50%;
+}
+.comingDays {
+    height: 100%;
+}
+.comDayIcon {
+    width: 50%;
 }
