@@ -56,7 +56,9 @@ ul {
 .city {
     font-size: 36px;
     font-weight: 500;
+    text-transform: capitalize;
 }
+
 .rightNow {
     position: absolute;
     top: 35%;
@@ -69,6 +71,10 @@ ul {
     font-size: 25px;
     font-weight: 400;
 }
+#description {
+    text-transform: capitalize;
+}
+
 .currentIcon {
     width: 60%;
 }

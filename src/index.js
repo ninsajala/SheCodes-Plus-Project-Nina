@@ -37,7 +37,7 @@ function showTime() {
 
   function defaultLocation() {
     let apiKey = "1be83355b3c9da70c189c0df40350020";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=${apiKey}&units=metric&lang=en`;
     function getWeather(response) {
       let h1 = document.querySelector(".city");
       h1.innerHTML = response.data.name;
@@ -63,7 +63,13 @@ function showTime() {
       let setMinutes = "0" + setDate.getMinutes();
       let sunset = document.querySelector("#sunset");
       sunset.innerHTML = setHours.substr(-2) + ':' + setMinutes.substr(-2);
+      let description = document.querySelector("#description");
+      description.innerHTML = response.data.weather[0].description;
+      let currentIconId = response.data.weather[0].icon
+      let currentIcon = document.querySelector("#current-icon");
+      currentIcon.src = `http://openweathermap.org/img/wn/${currentIconId}@2x.png`
     }
     axios.get(apiUrl).then(getWeather);
+    
   }
   defaultLocation()
