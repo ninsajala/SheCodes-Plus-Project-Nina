@@ -16,25 +16,22 @@
         <div class="row">         
 <div class="col-7 leftColumn">
    <form id="search-location">
-        <input id="search-bar" class="searchBar" type="text" placeholder="Search location">
+        <input id="search-bar" class="searchBar" type="text" placeholder="Search location" autocomplete="off">
         <button class="submit" type="submit" value="Search" title="Search"><i class="fas fa-search"></i></button>
         <a id="current-location" class="locationLink" href="#" title="Go to current location">  
             <i class="fas fa-map-marker-alt fa-lg"></i></a>
     </form>
     
-    <div class="currentCondition">
-    <span id="city" class="city">Amsterdam</span>
-    <p id="date">Monday <br> 
-       August 10, 2020<br>
-       11:46</p>
+    <span id="city" class="city"></span>
+    <p id="day">Monday </p>
+       <p id="date"> August 10, 2020</p>
+       <p id="time">11:46</p>
     <span class="rightNow">
     <span id="temp">28</span>°C |°F <br>
         <span id="description">Clear Sky</span> <br>
     </span>
     <img id="current-icon" class="currentIcon" src="images/sunny.png" alt="Current Weather Icon"><br>
     <span class="minmaxToday"><strong><span id="max-today">33</span>°C</strong> | <span id="min-today">18</span>°C</span>
-
-</div>
     <div class="row">
         <div class="col-2"></div>
         <div class="col-2 comingHour">13h<br>
@@ -62,8 +59,6 @@
         <li class="condition"><img src="images/wind.png" alt="Wind" class="conditionIcon">
             <strong>Wind:</strong> 
             <span id="wind-speed">15</span>km/h</li>
-        <li class="condition"><img src="images/drip.png" alt="Precipitation" class="conditionIcon">
-            <strong>Precipitation:</strong> 0 MM</li>
     </ul>
     <div class="row">
         <div class="col-1"></div>
@@ -81,7 +76,7 @@
 
 </div>
 <div class="col-5">
-    <ul class="comingDays"><strong>Coming days</strong>
+    <ul class="comingDays"><strong class="comDayTitle">Coming days</strong>
     <li class="comingDay">Tuesday<br>
         Aug 11 <br>
     <img src="images/sunny.png" alt="Clear Sky" class="comDayIcon"><br>
@@ -117,6 +112,6 @@
 
     </div>
  
-<script src="src/index.js"></script>    
+<script src="src/index2.js"></script>    
 </body>
 </html>

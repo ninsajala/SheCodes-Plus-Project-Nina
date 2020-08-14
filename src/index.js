@@ -35,9 +35,12 @@ function showTime() {
   }
   showTime();
 
+
+
+
   function defaultLocation() {
     let apiKey = "1be83355b3c9da70c189c0df40350020";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=${apiKey}&units=metric&lang=en`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=${apiKey}&units=metric`;
     function getWeather(response) {
       let city = document.querySelector(".city");
       city.innerHTML = response.data.name;
@@ -48,7 +51,7 @@ function showTime() {
       let maxToday = document.querySelector("#max-today");
       maxToday.innerHTML = Math.round(response.data.main.temp_max);
       let windSpeed = document.querySelector("#wind-speed");
-      windSpeed.innerHTML = Math.round(response.data.wind.speed * 3, 6);
+      windSpeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
       let humidity = document.querySelector("#humidity");
       humidity.innerHTML = response.data.main.humidity;
       let riseStamp = response.data.sys.sunrise;
@@ -67,7 +70,7 @@ function showTime() {
       description.innerHTML = response.data.weather[0].description;
       let currentIconId = response.data.weather[0].icon
       let currentIcon = document.querySelector("#current-icon");
-      currentIcon.src = `http://openweathermap.org/img/wn/${currentIconId}@2x.png`
+      currentIcon.src = `images/${currentIconId}.png`
     }
     axios.get(apiUrl).then(getWeather);
     
@@ -93,7 +96,7 @@ function showTime() {
         let maxToday = document.querySelector("#max-today");
         maxToday.innerHTML = Math.round(response.data.main.temp_max);
         let windSpeed = document.querySelector("#wind-speed");
-        windSpeed.innerHTML = Math.round(response.data.wind.speed * 3, 6);
+        windSpeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
         let humidity = document.querySelector("#humidity");
         humidity.innerHTML = response.data.main.humidity;
         let riseStamp = response.data.sys.sunrise;
@@ -137,7 +140,7 @@ function showTime() {
         let maxToday = document.querySelector("#max-today");
         maxToday.innerHTML = Math.round(response.data.main.temp_max);
         let windSpeed = document.querySelector("#wind-speed");
-        windSpeed.innerHTML = Math.round(response.data.wind.speed * 3, 6);
+        windSpeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
         let humidity = document.querySelector("#humidity");
         humidity.innerHTML = response.data.main.humidity;
         let riseStamp = response.data.sys.sunrise;
