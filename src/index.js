@@ -124,6 +124,10 @@ function getWeather (response) {
 
     let sunset = document.querySelector("#sunset");
     sunset.innerHTML = formatTime(response.data.sys.sunset * 1000);
+
+    let illustration = document.querySelector("#change-illustration")
+    illustration.src = `images/illustration-${response.data.weather[0].icon}.png`
+    illustration.alt =  `${response.data.weather[0].description} illustration`
   }
   let currentCelsius = null;
   let minTodayCel = null;
