@@ -50,6 +50,29 @@ function formatDate (timestamp){
       return `${month} ${datum}, ${year}`
 }
 
+
+function formatShortDate (timestamp){
+  let date = new Date(timestamp);
+    let months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ];
+      let month = months[date.getMonth()];
+      let datum = date.getDate();
+
+      return `${month} ${datum}`
+
+}
 function formatTime(timestamp){
     let date = new Date(timestamp);
     let hour = "0" + date.getHours();
@@ -129,32 +152,27 @@ function getWeather (response) {
  let comingHour2Cel = null;
  let comingHour3Cel = null;
 
- function getComingDays(response) {
+ /*function getComingDays(response) {
   let comingDays = document.querySelector("#coming-days");
   comingDays.innerHTML = null;
   let comingDay =  null;
-  comingDay = response.data.list[5];
-  console.log(comingDay)
 
+  for (let index = 5; index < 38; index + 8) {
+  comingDay = response.data.list[index];
+  comingDays.innerHTML +=
+  `<li class="comingDay">${formatDay(comingDay.dt * 1000)}<br>
+  ${formatDate(comingDay.dt * 1000)} <br>
+  <img src="images/${comingDay.weather[0].icon}.png" 
+  alt="${comingDay.weather[0].description}" 
+  class="comDayIcon"><br>
+  <strong>
+  <span id="comingDay${index}MaxCel">
+  ${Math.round(comingDay.main.temp_max)}
+  </span>°</strong> | <span id="comingDay${index}MinCel">
+  ${Math.round(comingDay.main.temp_min)}</span>°  
+  </li>`
+  }*/
   
-
-/*
-  for (let index = 5; index < 38; index+8) {
-    comingDays.innerHTML += `
-    <li class="comingDay">${formatDay(comingDay.dt * 1000)}<br>
-    ${formatDate(comingDay.dt * 1000)} <br>
-    <img src="images/${comingDay.weather[0].icon}.png" 
-    alt="${comingDay.weather[0].description}" 
-    class="comDayIcon"><br>
-    <strong>
-    <span id="comingDay${index}MaxCel">
-    ${Math.round(comingDay.main.temp_max)}
-    </span>°</strong> | <span id="comingDay${index}MinCel">
-    ${Math.round(comingDay.main.temp_min)}</span>°  
-    </li>`
-
-    
-    }
   comingDay5MinCel = response.data[5].main.temp_min;
   comingDay13MinCel = response.data[13].main.temp_min;
   comingDay21MinCel = response.data[21].main.temp_min;
@@ -165,9 +183,6 @@ function getWeather (response) {
   comingDay21MaxCel = response.data[21].main.temp_max;
   comingDay29MaxCel = response.data[29].main.temp_max;
   comingDay37MaxCel = response.data[37].main.temp_max;
-*/
-  
-  
 
   }
   
