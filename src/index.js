@@ -152,50 +152,42 @@ function getWeather (response) {
  let comingHour2Cel = null;
  let comingHour3Cel = null;
 
- /*function getComingDays(response) {
+ function getComingDays(response) {
   let comingDays = document.querySelector("#coming-days");
   comingDays.innerHTML = null;
   let comingDay =  null;
+  let position = 7
 
-  for (let index = 5; index < 38; index + 8) {
-  comingDay = response.data.list[index];
+  for (let index = 0; index < 5; index ++) {
+  comingDay = response.data.list[position];
   comingDays.innerHTML +=
   `<li class="comingDay">${formatDay(comingDay.dt * 1000)}<br>
-  ${formatDate(comingDay.dt * 1000)} <br>
+  ${formatShortDate(comingDay.dt * 1000)} <br>
   <img src="images/${comingDay.weather[0].icon}.png" 
   alt="${comingDay.weather[0].description}" 
   class="comDayIcon"><br>
   <strong>
-  <span id="comingDay${index}MaxCel">
-  ${Math.round(comingDay.main.temp_max)}
-  </span>°</strong> | <span id="comingDay${index}MinCel">
+  <span id="comingDay${position}Cel">
   ${Math.round(comingDay.main.temp_min)}</span>°  
   </li>`
+  position = position + 8 
   }
   
-  comingDay5MinCel = response.data[5].main.temp_min;
-  comingDay13MinCel = response.data[13].main.temp_min;
-  comingDay21MinCel = response.data[21].main.temp_min;
-  comingDay29MinCel = response.data[29].main.temp_min;
-  comingDay37MinCel = response.data[37].main.temp_min;
-  comingDay5MaxCel = response.data[5].main.temp_max;
-  comingDay13MaxCel = response.data[13].main.temp_max;
-  comingDay21MaxCel = response.data[21].main.temp_max;
-  comingDay29MaxCel = response.data[29].main.temp_max;
-  comingDay37MaxCel = response.data[37].main.temp_max;
-*/
-  }
+  comingDay7Cel = response.data.list[7].main.temp;
+  comingDay15Cel = response.data.list[15].main.temp;
+  comingDay23Cel = response.data.list[23].main.temp;
+  comingDay31Cel = response.data.list[31].main.temp;
+  comingDay39Cel = response.data.list[39].main.temp;
+
+}
   
-  let comingDay5MinCel = null;
-  let comingDay13MinCel = null;
-  let comingDay21MinCel = null;
-  let comingDay29MinCel = null;
-  let comingDay37MinCel = null;
-  let comingDay5MaxCel = null;
-  let comingDay13MaxCel = null;
-  let comingDay21MaxCel = null;
-  let comingDay29MaxCel = null;
-  let comingDay37MaxCel = null;
+  
+  let comingDay7Cel = null;
+  let comingDay15Cel = null;
+  let comingDay23Cel = null;
+  let comingDay31Cel = null;
+  let comingDay39Cel = null;
+  
 
 function searchCity(event) {
     event.preventDefault();
@@ -237,6 +229,27 @@ function converttoFahrenheit(event) {
     let comingHour3Fahr = (comingHour3Cel * 1.8) + 32;
     comingHour3CelElement.innerHTML = Math.round(comingHour3Fahr);
 
+    let comingDay7CelElement = document.querySelector("#comingDay7Cel")
+    let comingDay7Fahr = (comingDay7Cel * 1.8) + 32;
+    comingDay7CelElement.innerHTML =  Math.round(comingDay7Fahr)
+
+    let comingDay15CelElement = document.querySelector("#comingDay15Cel")
+    let comingDay15Fahr = (comingDay15Cel * 1.8) + 32;
+    comingDay15CelElement.innerHTML =  Math.round(comingDay15Fahr)
+
+    let comingDay23CelElement = document.querySelector("#comingDay23Cel")
+    let comingDay23Fahr = (comingDay23Cel * 1.8) + 32;
+    comingDay23CelElement.innerHTML =  Math.round(comingDay23Fahr)
+
+    let comingDay31CelElement = document.querySelector("#comingDay31Cel")
+    let comingDay31Fahr = (comingDay31Cel * 1.8) + 32;
+    comingDay31CelElement.innerHTML =  Math.round(comingDay31Fahr)
+
+    let comingDay39CelElement = document.querySelector("#comingDay39Cel")
+    let comingDay39Fahr = (comingDay39Cel * 1.8) + 32;
+    comingDay39CelElement.innerHTML =  Math.round(comingDay39Fahr)
+  
+
 }
 let fahrenheitlink = document.querySelector("#fahrenheit-link")
 fahrenheitlink.addEventListener("click", converttoFahrenheit)
@@ -252,8 +265,8 @@ function converttoCelsius(event) {
     let minToday = document.querySelector("#min-today")
     minToday.innerHTML = Math.round(minTodayCel);
 
-    let maxToday = document.querySelector("max-today")
-    maxToday = Math.round(maxTodayCel);
+    let maxToday = document.querySelector("#max-today")
+    maxToday.innerHTML = Math.round(maxTodayCel);
 
     let comingHour0CelElement = document.querySelector("#comingHour0Cel")
     comingHour0CelElement.innerHTML = Math.round(comingHour0Cel);
@@ -267,6 +280,20 @@ function converttoCelsius(event) {
     let comingHour3CelElement = document.querySelector("#comingHour3Cel")
     comingHour3CelElement.innerHTML = Math.round(comingHour3Cel);
 
+    let comingDay7CelElement = document.querySelector("#comingDay7Cel")
+    comingDay7CelElement.innerHTML = Math.round(comingDay7Cel);
+
+    let comingDay15CelElement = document.querySelector("#comingDay15Cel")
+    comingDay15CelElement.innerHTML = Math.round(comingDay15Cel);
+
+    let comingDay23CelElement = document.querySelector("#comingDay23Cel")
+    comingDay23CelElement.innerHTML = Math.round(comingDay23Cel);
+
+    let comingDay31CelElement = document.querySelector("#comingDay31Cel")
+    comingDay31CelElement.innerHTML = Math.round(comingDay31Cel);
+
+    let comingDay39CelElement = document.querySelector("#comingDay39Cel")
+    comingDay39CelElement.innerHTML = Math.round(comingDay39Cel);
 
 }
 let celsiuslink = document.querySelector("#celsius-link");
