@@ -46,7 +46,7 @@ footer {
 }
 .locLink {
     text-align: left;
-    margin: 5% 20% 5% 15%;
+    margin: 5% 25% 5% 15%;
 
 }
 .locationLink {
@@ -77,7 +77,7 @@ footer {
 
 .rightNow {
     position: absolute;
-    top: 35%;
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2vw;
