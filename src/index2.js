@@ -142,27 +142,25 @@ function converttoCelsius(event) {
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", converttoCelsius)
 
-/*
-LOCATION TRIES AND FAILURES
-
-    let apiKey = "1be83355b3c9da70c189c0df40350020";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
-        coordinates.lat}&lon=${coordinates.long}&appid=${apiKey}&units=metric`;
-}
-
 function getCoords(position) {
-    let lat = position.coords.latitude;
-    let long = position.coords.longitude;
-    return [lat, long];
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    let apiKey = "1be83355b3c9da70c189c0df40350020"
+    let geoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(geoUrl).then(getCity);
   }
 
-let foo = getCoords();
-console.log(foo)
-  
+  function getCity(response){
+      apiCall(response.data.name);
+  }
 
+  let longitude = null;
+  let latitude = null
+
+  
 function getLocation() {
     navigator.geolocation.getCurrentPosition(getCoords);
   }
 
 let currentLocation = document.querySelector("#current-location");
-currentLocation.addEventListener("click", getLocation);*/
+currentLocation.addEventListener("click", getLocation);

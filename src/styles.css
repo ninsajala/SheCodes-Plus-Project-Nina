@@ -53,7 +53,7 @@ footer {
 }
 .fa-map-marker-alt {
     color: black;
-    font-size: 1.5vw;
+    font-size: xx-large;
     transition: all 200ms ease-in-out;
 }
 .fa-map-marker-alt:hover {
