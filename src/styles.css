@@ -1,9 +1,16 @@
+p {
+font-size: 1.5vw;
+}
+
 form {
     text-align: left;
     margin: 5% 15%;
 }
 ul {
     list-style-type: none;
+}
+footer {
+    font-size: 1.3vw;
 }
 .container-sm {
     font-family: 'Montserrat Alternates', sans-serif;
@@ -22,11 +29,12 @@ ul {
     margin: 1% 2%;
     border-radius: 10px;
     border: 1px solid #FDBF68;
+    font-size: 1.5vw;
 }
 .submit {
     padding: 2% 3%;  
     border-radius: 15%;
-    font-size: large;
+    font-size: 1.5vw;
     color: #FDBF68;
 }
 .submit:hover {
@@ -42,19 +50,19 @@ ul {
 }
 .fa-map-marker-alt {
     color: black;
-    font-size: x-large;
+    font-size: 1.5vw;
     transition: all 200ms ease-in-out;
 }
 .fa-map-marker-alt:hover {
     color: #FDBF68;
-    font-size: xx-large;
+    font-size: 2vw;
 
 }
 .currentCondition {
  border-radius: 40%;
 }
 .city {
-    font-size: 36px;
+    font-size: 3vw;
     font-weight: 500;
     text-transform: capitalize;
 }
@@ -64,11 +72,11 @@ ul {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
+    font-size: 2vw;
     font-weight: 500;
 }
 .minmaxToday {
-    font-size: 25px;
+    font-size: 1.8vw;
     font-weight: 400;
 }
 #description {
@@ -83,6 +91,7 @@ ul {
     border-radius: 20px;
     padding: 2%;
     transition: all 200ms ease-in-out;
+    font-size: 1.5vw;
 }
 .comingHour:hover, .condition:hover, .Sunrise:hover, .Sunset:hover, .comingDay:hover {
     border: 0.2px solid black;
@@ -94,7 +103,7 @@ ul {
 }
 .conditions {
     text-align: left;
-    font-size: 18px;
+    font-size: 2vw;
 }
 .condition {
     margin: 3% 0 3% 5%;
@@ -111,6 +120,7 @@ ul {
     padding: 1% 1%; 
     margin: 0 2%;
     transition: all 200ms ease-in-out;
+    font-size: 1.5vw;
 }
 .sunriseIcon {
     width: 50%;
@@ -119,11 +129,12 @@ ul {
     width: 50%;
 }
 .comDayTitle {
-    font-size: 18px;
+    font-size: 1.8vw;
 }
 .comingDays {
     margin: 10% 5% 10% 5%;
     width: 65%;
+    font-size: 1.5vw;
 }
 .comingDay {
     margin: 15% 15%;
