@@ -110,6 +110,8 @@ searchForm.addEventListener("submit", searchCity);
 
 function converttoFahrenheit(event) {
     event.preventDefault();
+    fahrenheitlink.classList.add("active");
+    celsiuslink.classList.remove("active");
     let currentTemp = document.querySelector("#temp")
     let currentFahr = (currentCelsius * 1.8) + 32;
     currentTemp.innerHTML = Math.round(currentFahr);
@@ -128,14 +130,14 @@ fahrenheitlink.addEventListener("click", converttoFahrenheit)
 
 function converttoCelsius(event) {
     event.preventDefault();
+    celsiuslink.classList.add("active");
+    fahrenheitlink.classList.remove("active");
     let currentTemp = document.querySelector("#temp")
     currentTemp.innerHTML = Math.round(currentCelsius);
     let minToday = document.querySelector("#min-today")
     minToday.innerHTML = Math.round(minTodayCel);
     let maxToday = document.querySelector("max-today")
     maxToday = Math.round(maxTodayCel);
-    
-
 }
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", converttoCelsius)

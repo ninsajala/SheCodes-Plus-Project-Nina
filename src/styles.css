@@ -12,6 +12,9 @@ ul {
 footer {
     font-size: 1.3vw;
 }
+
+
+
 .container-sm {
     font-family: 'Montserrat Alternates', sans-serif;
     margin: 0 auto;
@@ -75,6 +78,17 @@ footer {
     font-size: 2vw;
     font-weight: 500;
 }
+
+a.active  {
+    color: black;
+    cursor: default;
+}
+a.active:hover {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}
+
 .minmaxToday {
     font-size: 1.8vw;
     font-weight: 400;
