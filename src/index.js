@@ -171,7 +171,7 @@ function getWeather (response) {
   </span>°</strong> | <span id="comingDay${index}MinCel">
   ${Math.round(comingDay.main.temp_min)}</span>°  
   </li>`
-  }*/
+  }
   
   comingDay5MinCel = response.data[5].main.temp_min;
   comingDay13MinCel = response.data[13].main.temp_min;
@@ -183,7 +183,7 @@ function getWeather (response) {
   comingDay21MaxCel = response.data[21].main.temp_max;
   comingDay29MaxCel = response.data[29].main.temp_max;
   comingDay37MaxCel = response.data[37].main.temp_max;
-
+*/
   }
   
   let comingDay5MinCel = null;
