@@ -18,9 +18,10 @@
    <form id="search-location">
         <input id="search-bar" class="searchBar" type="text" placeholder="Search location" autocomplete="off">
         <button class="submit" type="submit" value="Search" title="Search"><i class="fas fa-search"></i></button>
-        <a id="current-location" class="locationLink" href="#" title="Go to current location">  
-            <i class="fas fa-map-marker-alt fa-lg"></i></a>
     </form>
+    <div class="locLink">
+    <a id="current-location" class="locationLink" href="#" title="Go to current location"> <i class="fas fa-map-marker-alt fa-lg"></i> Go to current location 
+    </a></div><br>
     
     <span id="city" class="city"></span>
    <p> <span id="day"></span>
@@ -32,8 +33,7 @@
     </span>
     <img id="current-icon" class="currentIcon" src="images/sunny.png" alt="Current Weather Icon"><br>
     <span class="minmaxToday"><strong><span id="max-today">33</span>°</strong> | <span id="min-today">18</span>°</span>
-    <div class="row">
-        <div class="col-2"></div>
+    <div class="row comingHours" id="coming-hours">
         <div class="col-2 comingHour">13h<br>
             <img src="images/01d.png" alt="Some Clouds" class="comHourIcon"><br>
             28°
@@ -50,7 +50,6 @@
             <img src="images/01d.png" alt="Clear Sky" class="comHourIcon"><br>
             28°
         </div>
-        <div class="col-2"></div>
     </div>
     <ul class="conditions">
         <li class="condition"><img src="images/humidity.png" alt="Humidity" class="conditionIcon">
@@ -61,23 +60,24 @@
             <span id="wind-speed"></span>km/h</li>
     </ul>
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-5 Sunrise" >
+        <div class="col-2"></div>
+        <div class="col-4 Sunrise" >
             <img src="images/sunrise.png" alt="Sunrise" class="sunriseIcon"><br>
             <span id="sunrise"></span>
         </div>
         
-        <div class="col-5 Sunset">
+        <div class="col-4 Sunset">
             <img src="images/sunset.png" alt="Sunset" class="sunsetIcon"><br>
             <span id="sunset"></span>
         </div>  
-        <div class="col-1"></div>
+        <div class="col-2"></div>
     </div>
 
 </div>
 <div class="col-5">
     <ul class="comingDays"><strong class="comDayTitle">Coming days</strong>
-    <li class="comingDay">Tuesday<br>
+    <span id="coming-days">
+        <li class="comingDay">Tuesday<br>
         Aug 11 <br>
     <img src="images/02d.png" alt="Clear Sky" class="comDayIcon"><br>
     <strong>30°</strong> | 17°  
@@ -101,7 +101,7 @@
         Aug 15 <br>
     <img src="images/02d.png" alt="Clear Sky" class="comDayIcon"><br>
     <strong>30°</strong> | 17°
-    </li></ul>
+    </li></span></ul>
     <img class="changImage" src="images/relaxing_monochromatic.png" alt="Relaxing woman">
 </div>
 </div>

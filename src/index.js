@@ -2,6 +2,12 @@ function apiCall(city) {
 let apiKey = "1be83355b3c9da70c189c0df40350020"
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 axios.get(apiUrl).then(getWeather);
+
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
+axios.get(apiUrl).then(getComingHours);
+
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
+axios.get(apiUrl).then(getComingDays);
 }
 
 apiCall("Amsterdam");
@@ -100,6 +106,82 @@ function getWeather (response) {
   let minTodayCel = null;
   let maxTodayCel = null;
 
+ function getComingHours (response){
+  let comingHours = document.querySelector("#coming-hours");
+  comingHours.innerHTML = null;
+  let comingHour = null;  
+
+  for (let index = 0; index < 4; index++){
+    comingHour = response.data.list[index];
+    comingHours.innerHTML += `<div class="col-2 comingHour">${formatTime(comingHour.dt * 1000)}<br>
+    <img src="images/${comingHour.weather[0].icon}.png" alt="${comingHour.weather[0].description}" class="comHourIcon"><br>
+    <span id="comingHour${index}Cel">${Math.round(comingHour.main.temp)}</span>°
+    </div>
+    `
+  }
+  comingHour0Cel = response.data.list[0].main.temp;
+  comingHour1Cel = response.data.list[1].main.temp;
+  comingHour2Cel = response.data.list[2].main.temp;
+  comingHour3Cel = response.data.list[3].main.temp;
+ }
+ let comingHour0Cel = null;
+ let comingHour1Cel = null;
+ let comingHour2Cel = null;
+ let comingHour3Cel = null;
+
+ function getComingDays(response) {
+  let comingDays = document.querySelector("#coming-days");
+  comingDays.innerHTML = null;
+  let comingDay =  null;
+  comingDay = response.data.list[5];
+  console.log(comingDay)
+
+  
+
+/*
+  for (let index = 5; index < 38; index+8) {
+    comingDays.innerHTML += `
+    <li class="comingDay">${formatDay(comingDay.dt * 1000)}<br>
+    ${formatDate(comingDay.dt * 1000)} <br>
+    <img src="images/${comingDay.weather[0].icon}.png" 
+    alt="${comingDay.weather[0].description}" 
+    class="comDayIcon"><br>
+    <strong>
+    <span id="comingDay${index}MaxCel">
+    ${Math.round(comingDay.main.temp_max)}
+    </span>°</strong> | <span id="comingDay${index}MinCel">
+    ${Math.round(comingDay.main.temp_min)}</span>°  
+    </li>`
+
+    
+    }
+  comingDay5MinCel = response.data[5].main.temp_min;
+  comingDay13MinCel = response.data[13].main.temp_min;
+  comingDay21MinCel = response.data[21].main.temp_min;
+  comingDay29MinCel = response.data[29].main.temp_min;
+  comingDay37MinCel = response.data[37].main.temp_min;
+  comingDay5MaxCel = response.data[5].main.temp_max;
+  comingDay13MaxCel = response.data[13].main.temp_max;
+  comingDay21MaxCel = response.data[21].main.temp_max;
+  comingDay29MaxCel = response.data[29].main.temp_max;
+  comingDay37MaxCel = response.data[37].main.temp_max;
+*/
+  
+  
+
+  }
+  
+  let comingDay5MinCel = null;
+  let comingDay13MinCel = null;
+  let comingDay21MinCel = null;
+  let comingDay29MinCel = null;
+  let comingDay37MinCel = null;
+  let comingDay5MaxCel = null;
+  let comingDay13MaxCel = null;
+  let comingDay21MaxCel = null;
+  let comingDay29MaxCel = null;
+  let comingDay37MaxCel = null;
+
 function searchCity(event) {
     event.preventDefault();
     let location = document.querySelector("#search-bar");
@@ -123,7 +205,23 @@ function converttoFahrenheit(event) {
     let maxToday = document.querySelector("#max-today")
     let maxTodayFahr = (maxTodayCel * 1.8) + 32;
     maxToday.innerHTML = Math.round(maxTodayFahr);
-   
+
+    let comingHour0CelElement = document.querySelector("#comingHour0Cel")
+    let comingHour0Fahr = (comingHour0Cel * 1.8) + 32;
+    comingHour0CelElement.innerHTML = Math.round(comingHour0Fahr);
+
+    let comingHour1CelElement = document.querySelector("#comingHour1Cel")
+    let comingHour1Fahr = (comingHour1Cel * 1.8) + 32;
+    comingHour1CelElement.innerHTML = Math.round(comingHour1Fahr);
+
+    let comingHour2CelElement = document.querySelector("#comingHour2Cel")
+    let comingHour2Fahr = (comingHour2Cel * 1.8) + 32;
+    comingHour2CelElement.innerHTML = Math.round(comingHour2Fahr);
+
+    let comingHour3CelElement = document.querySelector("#comingHour3Cel")
+    let comingHour3Fahr = (comingHour3Cel * 1.8) + 32;
+    comingHour3CelElement.innerHTML = Math.round(comingHour3Fahr);
+
 }
 let fahrenheitlink = document.querySelector("#fahrenheit-link")
 fahrenheitlink.addEventListener("click", converttoFahrenheit)
@@ -132,12 +230,29 @@ function converttoCelsius(event) {
     event.preventDefault();
     celsiuslink.classList.add("active");
     fahrenheitlink.classList.remove("active");
+
     let currentTemp = document.querySelector("#temp")
     currentTemp.innerHTML = Math.round(currentCelsius);
+
     let minToday = document.querySelector("#min-today")
     minToday.innerHTML = Math.round(minTodayCel);
+
     let maxToday = document.querySelector("max-today")
     maxToday = Math.round(maxTodayCel);
+
+    let comingHour0CelElement = document.querySelector("#comingHour0Cel")
+    comingHour0CelElement.innerHTML = Math.round(comingHour0Cel);
+
+    let comingHour1CelElement = document.querySelector("#comingHour1Cel")
+    comingHour1CelElement.innerHTML = Math.round(comingHour1Cel);
+
+    let comingHour2CelElement = document.querySelector("#comingHour2Cel")
+    comingHour2CelElement.innerHTML = Math.round(comingHour2Cel);
+
+    let comingHour3CelElement = document.querySelector("#comingHour3Cel")
+    comingHour3CelElement.innerHTML = Math.round(comingHour3Cel);
+
+
 }
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", converttoCelsius)
@@ -154,8 +269,8 @@ function getCoords(position) {
       apiCall(response.data.name);
   }
 
-  let longitude = null;
-  let latitude = null
+let longitude = null;
+let latitude = null
 
   
 function getLocation() {
