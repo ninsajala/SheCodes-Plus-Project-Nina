@@ -1,5 +1,6 @@
 p {
 font-size: 1.5vw;
+line-height: 1.5;
 }
 
 form {
@@ -47,23 +48,22 @@ footer {
 .locLink {
     text-align: left;
     margin: 5% 25% 5% 15%;
-
+    padding: 1% 5% 1% 0;
+}
+.fa-map-marker-alt {
+    color: black;
+    font-size: xx-large;
+    transition: all 200ms ease-in-out;
 }
 .locationLink {
     padding: 2% 1%;
     color: black;
     font-size: 1.5vw;
     transition: all 200ms ease-in-out;
-    
 }
 .locationLink:hover {
     color: #FDBF68;
     font-size: 1.5vw;
-}
-.fa-map-marker-alt {
-    color: black;
-    font-size: xx-large;
-    transition: all 200ms ease-in-out;
 }
 
 .currentCondition {
@@ -77,7 +77,7 @@ footer {
 
 .rightNow {
     position: absolute;
-    top: 37%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2vw;
@@ -93,7 +93,10 @@ a.active:hover {
     color: black;
     cursor: default;
 }
-
+.description {
+    font-size: 1.7vw;
+    
+}
 .minmaxToday {
     font-size: 1.8vw;
     font-weight: 400;
@@ -103,7 +106,7 @@ a.active:hover {
 }
 
 .currentIcon {
-    width: 60%;
+    width: 80%;
 }
 
 .comingHours {
@@ -151,6 +154,10 @@ a.active:hover {
 .sunsetIcon {
     width: 50%;
 }
+.rightColumn {
+    height: 100%;
+}
+
 .comDayTitle {
     font-size: 1.8vw;
 }
