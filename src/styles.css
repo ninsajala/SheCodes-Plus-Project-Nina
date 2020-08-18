@@ -59,6 +59,7 @@ footer {
     background-color: #FDBF68;
     color: white;
     border: 1px solid black;
+    cursor: pointer;
 }
 .locLink a {
     color: black;  
