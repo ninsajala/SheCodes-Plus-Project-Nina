@@ -46,25 +46,34 @@ footer {
 
 }
 .locLink {
-    text-align: left;
-    margin: 5% 25% 5% 15%;
-    padding: 1% 5% 1% 0;
+    padding: 3% 7%;
+    margin: 1% 2%;
+    border-radius: 10px;
+    border: 1px solid #FDBF68;
+    font-size: 1.5vw;
+    background-color: white;
+    transition: all 200ms ease-in-out;
+    width: 80%;
+}
+.locLink:hover {
+    background-color: #FDBF68;
+    color: white;
+    border: 1px solid black;
+}
+.locLink a {
+    color: black;  
+}
+.locLink a:hover {
+    text-decoration: none;
+    color: white;
 }
 .fa-map-marker-alt {
     color: black;
     font-size: xx-large;
     transition: all 200ms ease-in-out;
 }
-.locationLink {
-    padding: 2% 1%;
-    color: black;
-    font-size: 1.5vw;
-    transition: all 200ms ease-in-out;
-}
-.locationLink:hover {
-    color: #FDBF68;
-    font-size: 1.5vw;
-}
+
+
 
 .currentCondition {
  border-radius: 40%;
