@@ -54,6 +54,7 @@ footer {
     background-color: white;
     transition: all 200ms ease-in-out;
     width: 80%;
+    text-align: center;
 }
 .locLink:hover {
     background-color: #FDBF68;
