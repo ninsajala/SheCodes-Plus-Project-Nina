@@ -319,7 +319,8 @@ let longitude = null;
 let latitude = null
 
   
-function getLocation() {
+function getLocation(event) {
+    event.preventDefault();
     navigator.geolocation.getCurrentPosition(getCoords);
   }
 
