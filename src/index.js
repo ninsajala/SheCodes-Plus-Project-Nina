@@ -323,5 +323,5 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(getCoords);
   }
 
-let currentLocation = document.querySelector("#current-location");
+let currentLocation = document.querySelector(".locLink");
 currentLocation.addEventListener("click", getLocation);
