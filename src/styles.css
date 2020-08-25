@@ -45,23 +45,7 @@ footer {
     transition: all 200ms ease-in-out;
 
 }
-.locLink {
-    padding: 3% 7%;
-    margin: 1% 2%;
-    border-radius: 10px;
-    border: 1px solid #FDBF68;
-    font-size: 1.1vw;
-    background-color: white;
-    transition: all 200ms ease-in-out;
-    width: 80%;
-    text-align: center;
-}
-.locLink:hover {
-    background-color: #FDBF68;
-    color: white;
-    border: 1px solid black;
-    cursor: pointer;
-}
+
 .locLink a {
     color: black;  
 }
@@ -74,6 +58,25 @@ footer {
     font-size: xx-large;
     transition: all 200ms ease-in-out;
 }
+.locLink {
+    padding: 3% 7%;
+    margin: 1% 2%;
+    border-radius: 10px;
+    border: 1px solid #FDBF68;
+    font-size: 1.1vw;
+    background-color: white;
+    transition: all 200ms ease-in-out;
+    width: 80%;
+    text-align: center;
+    color: black;
+}
+.locLink:hover {
+    background-color: #FDBF68;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
 
 
 
